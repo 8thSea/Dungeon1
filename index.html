@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Roguelike Dungeon Crawler</title>
+  <!-- Include Three.js library from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.1/three.min.js"></script>
+  <style>
+    body { margin: 0; overflow: hidden; background: #000; }  /* fullscreen canvas, black background */
+    /* UI Overlay styles */
+    #ui {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+    }
+    /* Health bar container */
+    #healthBar {
+      position: fixed; top: 10px; left: 10px;
+      width: 200px; height: 20px;
+      background: red;
+    }
+    /* Health bar current health (green portion) */
+    #healthBarInner {
+      width: 100%; height: 100%;
+      background: lime;   /* bright green health */
+    }
+    /* Game Over text */
+    #gameOver {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-family: sans-serif;
+      font-size: 2em;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px 40px;
+      border: 2px solid white;
+      display: none;      /* hidden by default */
+      pointer-events: none;  /* clicks pass through */
+    }
+  </style>
+</head>
+<body>
+  <!-- UI overlay elements -->
+  <div id="ui">
+    <div id="healthBar">
+      <div id="healthBarInner"></div>
+    </div>
+    <div id="gameOver">Game Over – Press R to Restart</div>
+  </div>
+
+  <!-- Main game script -->
+  <script src="main.js"></script>
+</body>
+</html>
